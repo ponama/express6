@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  	<title>My Website</title>
+  </head>
+    <body data-gr-c-s-loaded="true">
+    <div class="container">
+      <form class="form-signin" method="post" action="/signup">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Login</label>
+        <input type="text" id="login" class="form-control" placeholder="Login" required="" autofocus="" name="login">
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="email" class="form-control" placeholder="Email address" required="" autofocus="" name="email">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="Password" required="" name="password">
+        <label for="inputPassword" class="sr-only">One more time</label>
+        <input type="password" id="repassword" class="form-control" placeholder="Password" required="" name="repassword">
+        <button class="btn btn-lg btn-primary btn-block" id='button' type="submit">Sign in</button>
+      </form>
+    </div> <!-- /container -->
+</body>
+  <script type="text/javascript">
+      var login = document.getElementById("login");
+      var email = document.getElementById("email");
+      var password = document.getElementById("password");
+      var repassword = document.getElementById("repassword");
+      var but = document.getElementById("button");
+      but.addEventListener("click", function(){
+        if (login.value.length < 2 || email.value.length < 5 || password.value.length < 6 || password.value !== repassword.value) {
+          but.disabled = true;
+          alert('not valid data')
+          console.log(login.value.length, email.value.length, password.value.length, password.value !== repassword.value)
+        }else{
+            console.log('ss');
+        }
+      });
+      login.addEventListener("click", function(){
+        but.disabled = false;
+      });
+      email.addEventListener("click", function(){
+        but.disabled = false;
+      });
+      password.addEventListener("click", function(){
+        but.disabled = false;
+      });
+      repassword.addEventListener("click", function(){
+        but.disabled = false;
+      });
+
+  </script>
+</html>
